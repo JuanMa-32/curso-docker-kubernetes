@@ -1,6 +1,6 @@
  FROM openjdk:17-jdk-alpine as builder
 
- WORKDIR /app/msvc-usuarios
+ WORKDIR /app/mscv-usuarios
 
  COPY ./pom.xml /app
  COPY ./mscv-usuarios/.mvn ./.mvn
@@ -17,7 +17,7 @@ COPY ./mscv-usuarios/src ./src
 
  WORKDIR /app
  RUN mkdir ./logs
- COPY --from=builder /app/msvc-usuarios/target/mscv-usuarios-0.0.1-SNAPSHOT.jar .
+ COPY --from=builder /app/mscv-usuarios/target/mscv-usuarios-0.0.1-SNAPSHOT.jar .
 
  EXPOSE 8001
 
